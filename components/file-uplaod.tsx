@@ -13,28 +13,32 @@ interface FileUploadProps {
     endpoint: "serverImage" | "messageFile" | "orderImage" | "profileImage" | "postImage";
     setFaces: (num: number) => void;
     setFetchingFaces: (val: boolean) => void;
-  }
+}
 
 
 
-export const FileUplaod = ({
-    onChange, value, endpoint,setFaces,setFetchingFaces
-}: FileUploadProps) => {
+export const FileUplaod: React.FC<FileUploadProps> = ({
+    endpoint,
+    value,
+    onChange,
+    setFaces,
+    setFetchingFaces,
+}) => {
 
     const fileType = value.split(".").pop();
 
 
-    const handleFileUploadComplete =async(res:any)=>{
+    const handleFileUploadComplete = async (res: any) => {
         onChange(res?.[0].url)
         setFetchingFaces(true)
         const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/user/detect-faces`, { imgUrl: res?.[0].url })
         if (response.data.status) {
-            if(response.data.data<=0){
+            if (response.data.data <= 0) {
                 setFaces(1)
-            }else{
+            } else {
                 setFaces(response?.data.data)
             }
-        }else{
+        } else {
             console.log(response.data)
         }
         setFetchingFaces(false)
@@ -69,9 +73,9 @@ export const FileUplaod = ({
         )
     }
     return (
-        <UploadDropzone className="mt-5 border-2 border-dashed border-primary/50" endpoint={endpoint} onClientUploadComplete={async (res) =>{
+        <UploadDropzone className="mt-5 border-2 border-dashed border-primary/50" endpoint={endpoint} onClientUploadComplete={async (res) => {
             handleFileUploadComplete(res)
-        } }
+        }}
             onUploadError={(error) => {
                 console.log(error)
             }}
