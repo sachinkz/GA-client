@@ -11,8 +11,8 @@ interface FileUploadProps {
     onChange: (url?: string) => void;
     value: string;
     endpoint: "serverImage" | "messageFile" | "orderImage" | "profileImage" | "postImage";
-    setFaces: (num: number) => void;
-    setFetchingFaces: (val: boolean) => void;
+    setFaces?: (num: number) => void;
+    setFetchingFaces?: (val: boolean) => void;
 }
 
 
