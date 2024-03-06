@@ -74,7 +74,7 @@ const OrdersArtist = ({ orders, acceptedOrders, toggleSidebarVisibility, showSid
                                             <div className="flex justify-start items-start flex-col space-y-2">
                                                 <p className="text-sm dark:text-white leading-none text-gray-800"><span className="dark:text-gray-400 text-gray-300">Style: </span> {order.style}</p>
                                                 <p className="text-sm dark:text-white leading-none text-gray-800"><span className="dark:text-gray-400 text-gray-300">Paper: </span> {order.paper}</p>
-                                                <p className="text-sm dark:text-white leading-none text-gray-800"><span className="dark:text-gray-400 text-gray-300">Faces: </span> {order.faces}</p>
+                                                <p className="text-sm dark:text-white leading-none text-gray-800"><span className="dark:text-gray-400 text-gray-300">Faces: </span> {order.faces>3 ? "More than 3" : order.faces}</p>
                                                 <p className='text-xs text-orange-500'>The order will be automatically rejected after 24 hours if you did not accept it </p>
                                             </div>
                                         </div>
