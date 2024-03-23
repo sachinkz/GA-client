@@ -74,7 +74,7 @@ const DeliveryForm = () => {
             <div className='flex justify-center w-full text-2xl font-bold text-center my-10'>
                 <h1>Provide your Delivery address</h1>
             </div>
-            <div className='flex justify-center mb-10'>
+            {/* <div className='flex justify-center mb-10'>
                 <div className="flex flex-col justify-center bg-secondary py-2 px-5 rounded-lg">
                     <div className='space-x-2'>
 
@@ -88,7 +88,7 @@ const DeliveryForm = () => {
                     </div>
                     <p className='ml-6 text-sm opacity-60'>sachin k, madathil house, keezhur, iritty...</p>
                 </div>
-            </div>
+            </div> */}
             <form action="" onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-full ">
                 <div className="space-y-8 px-6 w-full flex flex-col items-center">
                     <div className='flex w-[70%] max-md:w-[95%] max-md:flex-col items-center justify-around gap-5'>
