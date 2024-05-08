@@ -41,12 +41,12 @@ const ArtistSidebar = ({ showSidebar, toggleSidebarVisibility, userId ,userName,
                             <p className='text-primary/75 hover:text-primary max-lg:hidden'>Notifications</p>
                             {newNots>0 && <p className='absolute right-0  max-lg:right-3 max-lg:top-1 bg-green-400 text-secondary rounded-full text-xs px-1 font-bold'>{newNots}</p>}
                         </div>
-                    <Link href={"/messaging"}>
+                    {/* <Link href={"/messaging"}>
                         <div className='flex hover:bg-secondary/25 cursor-pointer pl-5 py-2 items-center gap-2'>
                             <MessageCircle className='w-4 h-4 max-lg:h-6 max-lg:w-5' />
                             <p className='text-primary/75 hover:text-primary max-lg:hidden'>Messages</p>
                         </div>
-                    </Link>
+                    </Link> */}
                     <div onClick={() => setIsModalOpen(true)} >
                         <CreatePostModal location='onSidebar' isOpen={isModalOpen} closeModal={setIsModalOpen} />
                     </div>
